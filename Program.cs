@@ -5,36 +5,33 @@ namespace Ping_Pong_Score
 {
     class Program
     {
-        static void Main(string[] args)
+        public static void Main(string[] args)
         {
-            // Strings for retrieving character name
-            string p1, p2;
-
             // player one
             Console.Write("Please enter first player's name: ");
-            p1 = Console.ReadLine();
-            Player playerOne = new Player(p1);
+            var p1 = Console.ReadLine();
+            var playerOne = new Player(p1);
 
             // player two
             Console.Write("Please enter second player's name: ");
-            p2 = Console.ReadLine();
-            Player playerTwo = new Player(p2);
+            var p2 = Console.ReadLine();
+            var playerTwo = new Player(p2);
 
             // Print player names
             Console.WriteLine("{0} vs. {1}", playerOne.ToString(), playerTwo.ToString());
-            play(playerOne, playerTwo);
+            Play(playerOne, playerTwo);
 
             Console.ReadKey();
-
         }
 
-        static void play(Player playerOne, Player playerTwo)
+        private static void Play(Player playerOne, Player playerTwo)
         {
+
+            var srvCtr = 0; // Players switch every five serves
+            var serve = true; // determines which player serves; true for p1, false for p1
+
             while (true)
             {
-                string tally;
-
-
                 if (((playerOne.Score >= 21) || (playerTwo.Score >= 21)) && (GetPointDifference(playerOne.Score, playerTwo.Score) >= 2))
                 {
                     Console.WriteLine("The winner is: {0}", GetWinner(playerOne, playerTwo));
@@ -42,9 +39,27 @@ namespace Ping_Pong_Score
                     break;
                 }
 
+                srvCtr++;
+
+                if (serve)
+                {
+                    Console.WriteLine("{0} serves.", playerOne.Name);
+
+                    if (srvCtr % 5 == 0)
+                        serve = false;
+                }
+                else
+                {
+                    Console.WriteLine("{0} serves.", playerTwo.Name);
+
+                    if (srvCtr % 5 == 0)
+                        serve = true;
+                }
+
+
                 Console.WriteLine("Press 1 if {0} scores. Press 2 if {1} scores.", playerOne.Name, playerTwo.Name);
                 Console.WriteLine("Type exit to quit game.");
-                tally = Console.ReadLine();
+                var tally = Console.ReadLine();
 
                 if (tally.Equals("exit"))
                 {
@@ -53,8 +68,7 @@ namespace Ping_Pong_Score
                 }
                 else
                 {
-                    byte res;
-                    Byte.TryParse(tally, out res);
+                    byte.TryParse(tally, out var res);
 
                     if (res == 1)
                         playerOne.IncreaseScore();
@@ -66,7 +80,7 @@ namespace Ping_Pong_Score
                     }
                 }
 
-                Console.WriteLine("Score is:\n{0}:\t{1}\n{2}:\t{3}\n", playerOne.Name, playerOne.Score, playerTwo.Name, playerTwo.Score);
+                Console.WriteLine("Score is:\n{0}:\t\t{1}\n{2}:\t\t{3}\n", playerOne.Name, playerOne.Score, playerTwo.Name, playerTwo.Score);
             }
         }
 
@@ -76,7 +90,7 @@ namespace Ping_Pong_Score
             return Math.Abs(sc1 - sc2);
         }
 
-        static string GetWinner(Player playerOne, Player playerTwo)
+        private static string GetWinner(Player playerOne, Player playerTwo)
         {
             int sc1 = playerOne.Score, sc2 = playerTwo.Score;
 
