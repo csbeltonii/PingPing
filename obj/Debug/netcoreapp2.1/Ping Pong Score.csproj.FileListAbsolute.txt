@@ -1,0 +1,11 @@
+C:\Users\tehbl\source\repos\Ping Pong Score\bin\Debug\netcoreapp2.1\Ping Pong Score.deps.json
+C:\Users\tehbl\source\repos\Ping Pong Score\bin\Debug\netcoreapp2.1\Ping Pong Score.runtimeconfig.json
+C:\Users\tehbl\source\repos\Ping Pong Score\bin\Debug\netcoreapp2.1\Ping Pong Score.runtimeconfig.dev.json
+C:\Users\tehbl\source\repos\Ping Pong Score\bin\Debug\netcoreapp2.1\Ping Pong Score.dll
+C:\Users\tehbl\source\repos\Ping Pong Score\bin\Debug\netcoreapp2.1\Ping Pong Score.pdb
+C:\Users\tehbl\source\repos\Ping Pong Score\obj\Debug\netcoreapp2.1\Ping Pong Score.csprojAssemblyReference.cache
+C:\Users\tehbl\source\repos\Ping Pong Score\obj\Debug\netcoreapp2.1\Ping Pong Score.csproj.CoreCompileInputs.cache
+C:\Users\tehbl\source\repos\Ping Pong Score\obj\Debug\netcoreapp2.1\Ping Pong Score.AssemblyInfoInputs.cache
+C:\Users\tehbl\source\repos\Ping Pong Score\obj\Debug\netcoreapp2.1\Ping Pong Score.AssemblyInfo.cs
+C:\Users\tehbl\source\repos\Ping Pong Score\obj\Debug\netcoreapp2.1\Ping Pong Score.dll
+C:\Users\tehbl\source\repos\Ping Pong Score\obj\Debug\netcoreapp2.1\Ping Pong Score.pdb
